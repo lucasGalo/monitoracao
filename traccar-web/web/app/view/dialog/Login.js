@@ -119,7 +119,7 @@ Ext.define('Traccar.view.dialog.Login', {
             xtype: 'textfield',
             name: 'password',
             reference: 'passwordField',
-            fieldLabel: Strings.userPassword,
+            fieldLabel: '1',
             inputType: 'password',
             allowBlank: false,
             enableKeyEvents: true,

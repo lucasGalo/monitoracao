@@ -157,22 +157,22 @@
         navigator.__defineGetter__('userAgent', function () { return __originalUserAgent.replace(/\/OPR[^)]*/g, ''); });
     }
 
-    addScriptFile('lib/extjs/ext-all.js');
-    addScriptFile('lib/extjs/classic/locale/locale-' + locale.languages[locale.language].code + '.js');
+    addScriptFile('lib/extjs/6.2.0/ext-all.js');
+    addScriptFile('lib/extjs/6.2.0/classic/locale/locale-' + locale.languages[locale.language].code + '.js');
 
-    addStyleFile('lib/extjs/classic/theme-triton/resources/theme-triton-all.css');
-    addScriptFile('lib/extjs/classic/theme-triton/theme-triton.js');
+    addStyleFile('lib/extjs/6.2.0/classic/theme-triton/resources/theme-triton-all.css');
+    addScriptFile('lib/extjs/6.2.0/classic/theme-triton/theme-triton.js');
 
-    addScriptFile('lib/extjs/packages/charts/classic/charts.js');
-    addStyleFile('lib/extjs/packages/charts/classic/triton/resources/charts-all.css');
+    addScriptFile('lib/extjs/6.2.0/packages/charts/classic/charts.js');
+    addStyleFile('lib/extjs/6.2.0/packages/charts/classic/triton/resources/charts-all.css');
 
-    addStyleFile('lib/ol/ol.css');
-    addScriptFile('lib/ol/ol.js');
+    addStyleFile('lib/ol/6.5.0/ol.css');
+    addScriptFile('lib/ol/6.5.0/ol.js');
 
-    addStyleFile('lib/ol-layerswitcher/ol-layerswitcher.css');
-    addScriptFile('lib/ol-layerswitcher/ol-layerswitcher.js');
+    addStyleFile('lib/ol-layerswitcher/3.8.3/ol-layerswitcher.css');
+    addScriptFile('lib/ol-layerswitcher/3.8.3/ol-layerswitcher.js');
 
-    addScriptFile('lib/proj4/proj4.js');
+    addScriptFile('lib/proj4js/2.6.0/proj4.js');
 
     window.Images = ['arrow', 'default', 'animal', 'bicycle', 'boat', 'bus', 'car', 'crane', 'helicopter', 'motorcycle',
         'offroad', 'person', 'pickup', 'plane', 'ship', 'tractor', 'train', 'tram', 'trolleybus', 'truck', 'van', 'scooter'];
