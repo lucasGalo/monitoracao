@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@mui/styles';
-import { ReactComponent as Logo } from '../resources/images/logo.svg';
+import { ReactComponent as Logo } from '../resources/images/prosat.svg';
 
 const useStyles = makeStyles(() => ({
   image: {
