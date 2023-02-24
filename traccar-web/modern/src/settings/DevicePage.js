@@ -88,6 +88,7 @@ const DevicePage = () => {
                 label={t('sharedName')}
               />
               <TextField
+                disabled
                 value={item.uniqueId || ''}
                 onChange={(event) => setItem({ ...item, uniqueId: event.target.value })}
                 label={t('deviceIdentifier')}

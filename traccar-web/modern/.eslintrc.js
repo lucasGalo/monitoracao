@@ -27,6 +27,12 @@ module.exports = {
     'react/prop-types': [0],
     'react/jsx-props-no-spreading': [0],
     'jsx-a11y/anchor-is-valid': [0],
-    'linebreak-style': ["error", "windows"]
+    'linebreak-style': ["error", "windows"],
+    'spaced-comment': [ "error", "always", {
+      "line": {
+          "exceptions": ["#region", "#endregion", "region", "endregion"]
+      }
+  }]
   },
+
 };
