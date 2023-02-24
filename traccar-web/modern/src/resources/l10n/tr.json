@@ -489,7 +489,7 @@
     "notificatorMail": "Eposta",
     "notificatorSms": "SMS Mesajı",
     "notificatorFirebase": "Firebase",
-    "notificatorTraccar": "Traccar",
+    "notificatorTraccar": "ProSat",
     "notificatorTelegram": "Telegram",
     "notificatorPushover": "Pushover",
     "reportReplay": "Replay",

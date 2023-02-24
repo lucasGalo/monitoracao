@@ -489,7 +489,7 @@
     "notificatorMail": "Почта",
     "notificatorSms": "СМС",
     "notificatorFirebase": "Firebase",
-    "notificatorTraccar": "Traccar",
+    "notificatorTraccar": "ProSat",
     "notificatorTelegram": "Телеграмм",
     "notificatorPushover": "Нажатие",
     "reportReplay": "Воспроизвести",

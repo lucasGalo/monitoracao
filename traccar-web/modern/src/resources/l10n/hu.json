@@ -489,7 +489,7 @@
     "notificatorMail": "Levelezés",
     "notificatorSms": "SMS",
     "notificatorFirebase": "Tűzoltóság",
-    "notificatorTraccar": "Traccar",
+    "notificatorTraccar": "ProSat",
     "notificatorTelegram": "Telegram",
     "notificatorPushover": "Pushover",
     "reportReplay": "Visszajátszás",

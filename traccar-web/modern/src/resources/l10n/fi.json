@@ -489,7 +489,7 @@
     "notificatorMail": "Sähköposti",
     "notificatorSms": "Tekstiviesti",
     "notificatorFirebase": "Firebase",
-    "notificatorTraccar": "Traccar",
+    "notificatorTraccar": "ProSat",
     "notificatorTelegram": "Telegram",
     "notificatorPushover": "Pushover",
     "reportReplay": "Toista",

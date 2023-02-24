@@ -489,7 +489,7 @@
     "notificatorMail": "邮件",
     "notificatorSms": "短信",
     "notificatorFirebase": "Firebase",
-    "notificatorTraccar": "Traccar",
+    "notificatorTraccar": "ProSat",
     "notificatorTelegram": "Telegram账号",
     "notificatorPushover": "Pushover",
     "reportReplay": "轨迹回放",
