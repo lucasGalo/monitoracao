@@ -57,7 +57,7 @@ const LoginPage = () => {
   const [email, setEmail] = usePersistedState('loginEmail', '');
   const [password, setPassword] = useState('');
 
-  /**const registrationEnabled = useSelector((state) => state.session.server.registration);*/
+  /** const registrationEnabled = useSelector((state) => state.session.server.registration);*/
   const languageEnabled = useSelector((state) => !state.session.server.attributes['ui.disableLoginLanguage']);
   const emailEnabled = useSelector((state) => state.session.server.emailEnabled);
 
@@ -176,16 +176,16 @@ const LoginPage = () => {
           {t('loginLogin')}
         </Button>
         <div className={classes.extraContainer}>
-          {/* usuario nao podera se registart no sistema
-          <Button
-            className={classes.registerButton}
-            onClick={() => navigate('/register')}
-            disabled={!registrationEnabled}
-            color="secondary"
-          >
-            {t('loginRegister')}
-          </Button>
-        */}
+          {/**    
+           * Removido botão para add novos usuario       
+            <Button
+              className={classes.registerButton}
+              onClick={() => navigate('/register')}
+              disabled={!registrationEnabled}
+              color="secondary"
+            >
+              {t('loginRegister')}
+            </Button>*/}
           {languageEnabled && (
             <FormControl fullWidth>
               <InputLabel>{t('loginLanguage')}</InputLabel>

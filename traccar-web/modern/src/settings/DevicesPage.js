@@ -7,7 +7,7 @@ import { useEffectAsync } from '../reactHelper';
 import { useTranslation } from '../common/components/LocalizationProvider';
 import PageLayout from '../common/components/PageLayout';
 import SettingsMenu from './components/SettingsMenu';
-import CollectionFab from './components/CollectionFab';
+/* import CollectionFab from './components/CollectionFab';*/
 import CollectionActions from './components/CollectionActions';
 import TableShimmer from '../common/components/TableShimmer';
 import SearchHeader, { filterByKeyword } from './components/SearchHeader';
@@ -77,7 +77,7 @@ const DevicesPage = () => {
           )) : (<TableShimmer columns={6} endAction />)}
         </TableBody>
       </Table>
-      <CollectionFab editPath="/settings/device" />
+      {/* botão para add novos dispositivos <CollectionFab editPath="/settings/device" />*/}
     </PageLayout>
   );
 };

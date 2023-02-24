@@ -30,9 +30,9 @@ module.exports = {
     'linebreak-style': ["error", "windows"],
     'spaced-comment': [ "error", "always", {
       "line": {
-          "exceptions": ["#region", "#endregion", "region", "endregion"]
+        "markers": ["#region", "#endregion", "region", "endregion"]
       }
-  }]
+      }]
   },
 
 };
