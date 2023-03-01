@@ -176,8 +176,8 @@ const LoginPage = () => {
           {t('loginLogin')}
         </Button>
         <div className={classes.extraContainer}>
-          {/**    
-           * Removido botão para add novos usuario       
+          {/**
+           * Removido botão para add novos usuario
             <Button
               className={classes.registerButton}
               onClick={() => navigate('/register')}
