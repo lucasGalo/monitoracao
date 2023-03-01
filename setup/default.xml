@@ -22,7 +22,7 @@
     <entry key='geocoder.ignorePositions'>true</entry>
 
     <entry key='logger.level'>info</entry>
-    <entry key='logger.file'>./logs/tracker-server.log</entry>
+    <entry key='logger.file'>./logs/pro-sat.log</entry>
     <entry key='logger.rotate'>true</entry>
 
     <entry key='filter.enable'>true</entry>

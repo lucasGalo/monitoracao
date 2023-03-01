@@ -178,7 +178,7 @@ public final class Log {
             if (!logsPath.exists() || !logsPath.isDirectory()) {
                 logsPath = jarPath;
             }
-            path = new File(logsPath, "tracker-server.log").getPath();
+            path = new File(logsPath, "pro-sat.log").getPath();
         }
         setupLogger(path == null, path, Level.WARNING.getName(), false, true, "DAY");
     }
