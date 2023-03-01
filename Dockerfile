@@ -12,7 +12,7 @@ RUN gradle clean assemble
 
 # Package stage
 FROM adoptopenjdk:11-jre-hotspot-focal
-ENV ARTIFACT_NAME=app.jar
+ENV ARTIFACT_NAME=prosat.jar
 ENV APP_HOME=/opt/traccar
 COPY --from=BUILD_STAGE /home/gradle/target/*.jar $APP_HOME/$ARTIFACT_NAME
 COPY --from=BUILD_STAGE /home/gradle/target/lib $APP_HOME/lib
@@ -38,4 +38,12 @@ COPY ${SETUP_FILE} /opt/traccar/conf
 
 ENTRYPOINT ["java", "-Xms1g", "-Xmx1g", "-Djava.net.preferIPv4Stack=true"]
 
-CMD ["-jar", "app.jar", "conf/traccar.xml"]
+CMD ["-jar", "prosat.jar", "conf/traccar.xml"]
+
+### gerar build
+# $: docker build -t monitoracao:1.0.19 .
+
+### Gerar container
+### $: docker run --name monitoracao --hostname monitoracao --detach --restart unless-stopped --publish 80:8082 --publish 5000-5150:5000-5150 --publish 5000-5150:5000-5150/udp --volume /opt/monitoracao/logs:/opt/monitoracao/logs:rw --volume /opt/monitoracao/traccar.xml:/opt/monitoracao/conf/monitoracao.xml:ro monitoracao:1.0.19
+
+
