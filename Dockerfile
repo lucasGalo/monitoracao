@@ -5,7 +5,7 @@
 # RUN npm run build
 # RUN pwd
 
-Build stage
+# Build stage
 FROM gradle:7.5.1 AS BUILD_STAGE
 COPY --chown=gradle:gradle . /home/gradle
 RUN gradle clean assemble
