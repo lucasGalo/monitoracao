@@ -25,7 +25,7 @@ ARG CONF_FILE=conf
 ARG LOGS_FILE=logs
 ARG TEMPLATES_FILE=templates
 ARG SCHEMA_FILE=schema
-ARG MODERN_FILE=traccar-web/modern/build
+ARG MODERN_FILE=traccar-web/modern/app
 ARG LEGACY_FILE=legacy
 ARG SETUP_FILE=setup
 
