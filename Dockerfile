@@ -5,21 +5,21 @@
 # RUN npm run build
 # RUN pwd
 
-#Build stage
-# FROM gradle:7.5.1 AS BUILD_STAGE
-# COPY --chown=gradle:gradle . /home/gradle
-# RUN gradle clean assemble
+Build stage
+FROM gradle:7.5.1 AS BUILD_STAGE
+COPY --chown=gradle:gradle . /home/gradle
+RUN gradle clean assemble
 
 # Package stage
 FROM adoptopenjdk:11-jre-hotspot-focal
 ENV ARTIFACT_NAME=prosat.jar
 ENV APP_HOME=/opt/traccar
-# COPY --from=BUILD_STAGE /home/gradle/target/*.jar $APP_HOME/$ARTIFACT_NAME
-# COPY --from=BUILD_STAGE /home/gradle/target/lib $APP_HOME/lib
+COPY --from=BUILD_STAGE /home/gradle/target/*.jar $APP_HOME/$ARTIFACT_NAME
+COPY --from=BUILD_STAGE /home/gradle/target/lib $APP_HOME/lib
 WORKDIR /opt/traccar
 
-ARG LIB_FILE=target/lib
-ARG JAR_FILE=target/*.jar
+# ARG LIB_FILE=target/lib
+# ARG JAR_FILE=target/*.jar
 ARG DATA_FILE=data
 ARG CONF_FILE=conf
 ARG LOGS_FILE=logs
@@ -29,8 +29,8 @@ ARG MODERN_FILE=traccar-web/modern/app
 ARG LEGACY_FILE=legacy
 ARG SETUP_FILE=setup
 
-COPY ${LIB_FILE} /opt/traccar/lib
-COPY ${JAR_FILE} /opt/traccar/$ARTIFACT_NAME
+# COPY ${LIB_FILE} /opt/traccar/lib
+# COPY ${JAR_FILE} /opt/traccar/$ARTIFACT_NAME
 COPY ${DATA_FILE} /opt/traccar/data
 COPY ${CONF_FILE} /opt/traccar/conf
 COPY ${LOGS_FILE} /opt/traccar/logs
@@ -50,4 +50,6 @@ CMD ["-jar", "prosat.jar", "conf/traccar.xml"]
 ### Gerar container
 ### $: docker run --name monitoracao --hostname monitoracao --detach --restart unless-stopped --publish 80:8082 --publish 5000-5150:5000-5150 --publish 5000-5150:5000-5150/udp --volume /opt/monitoracao/logs:/opt/monitoracao/logs:rw --volume /opt/monitoracao/traccar.xml:/opt/monitoracao/conf/monitoracao.xml:ro monitoracao:1.0.19
 
+### Verificar os logs
+### $: docker container logs <container>
 
