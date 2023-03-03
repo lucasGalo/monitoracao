@@ -6,9 +6,9 @@
 # RUN pwd
 
 # Build stage
-FROM gradle:7.5.1 AS BUILD_STAGE
+FROM gradle:8.0.1-jdk11 AS BUILD_STAGE
 COPY --chown=gradle:gradle . /home/gradle
-RUN gradle clean assemble
+RUN gradle assemble
 
 # Package stage
 FROM adoptopenjdk:11-jre-hotspot-focal
@@ -25,15 +25,15 @@ ARG CONF_FILE=conf
 ARG LOGS_FILE=logs
 ARG TEMPLATES_FILE=templates
 ARG SCHEMA_FILE=schema
-ARG MODERN_FILE=traccar-web/modern/app
+ARG MODERN_FILE=traccar-web/modern/build
 ARG LEGACY_FILE=legacy
 ARG SETUP_FILE=setup
 
 # COPY ${LIB_FILE} /opt/traccar/lib
 # COPY ${JAR_FILE} /opt/traccar/$ARTIFACT_NAME
-COPY ${DATA_FILE} /opt/traccar/data
-COPY ${CONF_FILE} /opt/traccar/conf
-COPY ${LOGS_FILE} /opt/traccar/logs
+RUN mkdir /opt/traccar/data
+RUN mkdir /opt/traccar/conf
+RUN mkdir /opt/traccar/logs
 COPY ${TEMPLATES_FILE} /opt/traccar/templates
 COPY ${SCHEMA_FILE} /opt/traccar/schema
 COPY ${MODERN_FILE} /opt/traccar/modern
