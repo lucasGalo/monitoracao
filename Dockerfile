@@ -1,9 +1,10 @@
-#Build stage
-#  FROM node:10-alpine
-#  RUN cd ./traccar-web/modern npm install
-#  RUN npm install
-# RUN npm run build
-# RUN pwd
+# Build stage web
+FROM node:16 as BUILD_NODE
+WORKDIR /home/node
+ARG NODE_FILE=/traccar-web/modern
+COPY --chown=node:node ${NODE_FILE} ./
+RUN npm install
+RUN npm run build
 
 # Build stage
 FROM gradle:8.0.1-jdk11 AS BUILD_STAGE
@@ -16,6 +17,8 @@ ENV ARTIFACT_NAME=prosat.jar
 ENV APP_HOME=/opt/traccar
 COPY --from=BUILD_STAGE /home/gradle/target/*.jar $APP_HOME/$ARTIFACT_NAME
 COPY --from=BUILD_STAGE /home/gradle/target/lib $APP_HOME/lib
+
+COPY --from=BUILD_NODE /home/node/build $APP_HOME/modern
 WORKDIR /opt/traccar
 
 # ARG LIB_FILE=target/lib
@@ -25,7 +28,7 @@ ARG CONF_FILE=conf
 ARG LOGS_FILE=logs
 ARG TEMPLATES_FILE=templates
 ARG SCHEMA_FILE=schema
-ARG MODERN_FILE=traccar-web/modern/build
+# ARG MODERN_FILE=traccar-web/modern/build
 ARG LEGACY_FILE=legacy
 ARG SETUP_FILE=setup
 
@@ -36,7 +39,7 @@ RUN mkdir /opt/traccar/conf
 RUN mkdir /opt/traccar/logs
 COPY ${TEMPLATES_FILE} /opt/traccar/templates
 COPY ${SCHEMA_FILE} /opt/traccar/schema
-COPY ${MODERN_FILE} /opt/traccar/modern
+# COPY ${MODERN_FILE} /opt/traccar/modern
 COPY ${LEGACY_FILE} /opt/traccar/legacy
 COPY ${SETUP_FILE} /opt/traccar/conf
 
