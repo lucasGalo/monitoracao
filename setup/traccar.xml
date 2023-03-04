@@ -19,7 +19,7 @@
     -->
 
     <entry key='database.driver'>com.mysql.cj.jdbc.Driver</entry>
-    <entry key='database.url'>jdbc:mysql://192.168.1.104:3306/traccar_tb?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+    <entry key='database.url'>jdbc:mysql://192.168.1.104:3306/traccar_prod?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
     <entry key='database.user'>root</entry>
     <entry key='database.password'>Bilhon@rio2023</entry>
 
