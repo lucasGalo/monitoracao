@@ -19,10 +19,10 @@
 
     <entry key='mail.debug'>true</entry>
 
-    <entry key='database.driver'>org.postgresql.Driver</entry>
-    <entry key='database.url'>jdbc:postgresql://localhost:5432/traccar?createDatabaseIfNotExist=true&amp;useSSL=false</entry>
-    <entry key='database.user'>postgres</entry>
-    <entry key='database.password'>FEoceano!1234</entry>
+    <entry key='database.driver'>com.mysql.cj.jdbc.Driver</entry>
+    <entry key='database.url'>jdbc:mysql://192.168.1.100:3306/traccar_prod?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;allowMultiQueries=true&amp;autoReconnect=true&amp;useUnicode=yes&amp;characterEncoding=UTF-8&amp;sessionVariables=sql_mode=''</entry>
+    <entry key='database.user'>root</entry>
+    <entry key='database.password'>Bilhon@rio2023</entry>
 
     <entry key='atrack.custom'>true</entry>
     <entry key='intellitrac.port'>6037</entry>

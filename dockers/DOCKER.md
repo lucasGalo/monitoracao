@@ -2,7 +2,7 @@
 ## Container create example:
 1. **Create work directories:**
     ```bash
-    mkdir -p /opt/traccar/logs
+    mkdir -p /home/prosat/logs
     ```
 
 1. **Get default traccar.xml:**
@@ -10,8 +10,8 @@
     docker run \
     --rm \
     --entrypoint cat \
-    traccar/traccar:latest \
-    /opt/traccar/conf/traccar.xml > /opt/traccar/traccar.xml
+    lucasgalo/prosat:latest \
+    /opt/traccar/conf/traccar.xml > /home/prosat/prosat.xml
     ```
 
 1. **Edit traccar.xml:** <https://www.traccar.org/configuration-file/>
@@ -19,15 +19,15 @@
 1. **Create container:**
     ```bash
     docker run \
-    --name traccar \
-    --hostname traccar \
+    --name prosat \
+    --hostname prosat \
     --detach --restart unless-stopped \
     --publish 80:8082 \
     --publish 5000-5150:5000-5150 \
     --publish 5000-5150:5000-5150/udp \
-    --volume /opt/traccar/logs:/opt/traccar/logs:rw \
-    --volume /opt/traccar/traccar.xml:/opt/traccar/conf/traccar.xml:ro \
-    traccar/traccar:latest
+    --volume /home/prosat/logs:/opt/traccar/logs:rw \
+    --volume /home/prosat/prosat.xml:/opt/traccar/conf/traccar.xml:ro \
+    lucasgalo/prosat:0.3.0
     ```
 ### outro método seria baixar da release do git.
 ### Deixar o DOCKERFILE como abaixo
