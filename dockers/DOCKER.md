@@ -29,6 +29,10 @@
     --volume /home/prosat/prosat.xml:/opt/traccar/conf/traccar.xml:ro \
     lucasgalo/prosat:0.3.0
     ```
+   ```bash
+       docker run --name prosat --hostname prosat --detach --restart unless-stopped --publish 8082:8082 --publish 5000-5150:5000-5150 --publish 5000-5150:5000-5150/udp --volume /home/prosat/logs:/opt/traccar/logs:rw --volume /home/prosat/prosat.xml:/opt/traccar/conf/traccar.xml:ro lucasgalo/prosat:0.3.0
+   ```
+   
 ### outro método seria baixar da release do git.
 ### Deixar o DOCKERFILE como abaixo
    ```bash
