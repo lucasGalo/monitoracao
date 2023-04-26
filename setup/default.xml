@@ -54,7 +54,7 @@
     <entry key='trv.port'>5010</entry>
     <entry key='suntech.port'>5011</entry>
     <entry key='progress.port'>5012</entry>
-    <entry key='h02.port'>5013</entry>
+    <entry key='h02.port'>5023</entry>
     <entry key='jt600.port'>5014</entry>
     <entry key='huabao.port'>5015</entry>
     <entry key='v680.port'>5016</entry>
@@ -64,7 +64,7 @@
     <entry key='meitrack.port'>5020</entry>
     <entry key='skypatrol.port'>5021</entry>
     <entry key='gt02.port'>5022</entry>
-    <entry key='gt06.port'>5023</entry>
+    <entry key='gt06.port'>5013</entry>
     <entry key='megastek.port'>5024</entry>
     <entry key='navigil.port'>5025</entry>
     <entry key='gpsgate.port'>5026</entry>
